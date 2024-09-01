@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <div id="status" class="hidden">
+        <p>Time Left: <span id="time-left">60</span> seconds</p>
+        <p>Remaining Attempts: <span id="remaining-attempts">16</span></p>
+    </div>
+    <div id="game-board-container">
+        <h1 id="start-title">Click Start to Play!</h1>
+        <button id="start-btn">Start Game</button>
+        <div class="game-board" id="game-board">
+        </div>
+    </div>
+    <div id="end-message" class="hidden">
+        <h2 id="end-title"></h2>
+        <p>Your final score is: <span id="final-score"></span></p>
+        <button id="restart-btn">Restart Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
