@@ -94,6 +94,13 @@ footer h4 {
 }
 
 
+footer a{
+    color: white;
+}
+
+footer a:hover{
+   opacity: 0.8;
+}
 
 @media (max-width: 480px) {
 
@@ -106,7 +113,6 @@ footer h4 {
     .card {
         width: 80px;
         height: 80px;
-        border: 1px solid red;
     }
 
     footer h4 {

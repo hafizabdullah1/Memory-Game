@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Memory Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Memory Game</h1>
+    <img src="images/favicon.ico" alt="">
     <div id="status" class="hidden">
         <p>Time Left: <span id="time-left">60</span> seconds</p>
         <p>Remaining Attempts: <span id="remaining-attempts">16</span></p>
@@ -26,7 +29,7 @@
         <button id="restart-btn">Restart Game</button>
     </div>
     <footer>
-        <h4>unknown developer ☠️</h4>
+        <h4><a target="_blank" href="https://hafizabdullah.site">unknown developer</a> ☠️</h4>
     </footer>
 
     <script src="script.js"></script>

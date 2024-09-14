@@ -1,3 +1,19 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((registration) => {
+        console.log(
+          "Service Worker registered with scope:",
+          registration.scope
+        );
+      })
+      .catch((error) => {
+        console.error("Service Worker registration failed:", error);
+      });
+  });
+}
+
 const cardsArray = [
   { name: "A", id: 1 },
   { name: "B", id: 2 },
@@ -23,6 +39,7 @@ let timeLeft;
 function startGame() {
   document.getElementById("start-btn").style.display = "none";
   document.getElementById("start-title").style.display = "none";
+  document.querySelector("img").style.display = "none";
   document.getElementById("status").classList.remove("hidden");
   createBoard();
   startTimer();
@@ -140,6 +157,7 @@ function restartGame() {
   document.getElementById("start-title").style.display = "block";
   document.getElementById("start-btn").style.display = "inline-block";
   document.getElementById("end-message").classList.add("hidden");
+  document.querySelector("img").style.display = "inline-block";
   document.getElementById("game-board").style.pointerEvents = "auto";
 }
 
