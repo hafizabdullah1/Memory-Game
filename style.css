@@ -19,6 +19,7 @@ h1 {
 #game-board-container {
     text-align: center;
 }
+
 button {
     margin-bottom: 20px;
     padding: 10px 20px;
@@ -29,15 +30,17 @@ button {
     border-radius: 10px;
     color: white;
 }
+
 button:hover {
     opacity: 90%;
 }
 
 .game-board {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(4, 100px);
     gap: 10px;
+    margin-bottom: 100px;
 }
 
 .card {
@@ -72,4 +75,41 @@ button:hover {
 #end-message {
     margin-top: 20px;
     text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 5px 0px;
+    background: #7520DD;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+}
+
+footer h4 {
+    color: white;
+    text-transform: capitalize;
+}
+
+
+
+@media (max-width: 480px) {
+
+    .game-board {
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: repeat(4, 80px);
+        margin-bottom: 0px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        border: 1px solid red;
+    }
+
+    footer h4 {
+        font-size: 0.8rem;
+    }
 }

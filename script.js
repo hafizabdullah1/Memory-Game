@@ -10,7 +10,6 @@ const cardsArray = [
 ];
 
 let cards = [...cardsArray, ...cardsArray];
-cards = shuffle(cards);
 
 let flippedCards = [];
 let matchedCards = [];
@@ -19,6 +18,7 @@ const maxAttempts = 16;
 let score = 0;
 let timer;
 const gameTime = 60;
+let timeLeft;
 
 function startGame() {
   document.getElementById("start-btn").style.display = "none";
@@ -29,8 +29,10 @@ function startGame() {
 }
 
 function createBoard() {
+  cards = shuffle(cards);
   const gameBoard = document.getElementById("game-board");
-  gameBoard.innerHTML = ""; // Clear previous board
+  gameBoard.style.display = "grid";
+  gameBoard.innerHTML = "";
   cards.forEach((card, index) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
@@ -90,7 +92,7 @@ function shuffle(array) {
 }
 
 function startTimer() {
-  let timeLeft = gameTime;
+  timeLeft = gameTime;
   document.getElementById("time-left").textContent = timeLeft;
   timer = setInterval(() => {
     timeLeft--;
@@ -113,18 +115,18 @@ function endGame() {
 
   if (matchedCards.length === cards.length) {
     endTitle.textContent = "Congratulations! You won!";
-    document.getElementById("game-board").style.display = "none";
   } else {
-    document.getElementById("game-board").style.display = "none";
     endTitle.textContent = "Game Over!";
   }
 
-  score = (matchedCards.length / 2) * 10;
+  document.getElementById("game-board").style.display = "none";
+
+  score =
+    (matchedCards.length / 2) * 10 + timeLeft + (maxAttempts - wrongAttempts);
   finalScore.textContent = score < 0 ? 0 : score;
 
   gameBoard.innerHTML = "";
   gameBoard.textContent = endTitle.textContent;
-
   endMessage.classList.remove("hidden");
 }
 
@@ -136,7 +138,7 @@ function restartGame() {
   document.getElementById("time-left").textContent = gameTime;
   document.getElementById("status").classList.add("hidden");
   document.getElementById("start-title").style.display = "block";
-  document.getElementById("start-btn").style.display = "block";
+  document.getElementById("start-btn").style.display = "inline-block";
   document.getElementById("end-message").classList.add("hidden");
   document.getElementById("game-board").style.pointerEvents = "auto";
 }
