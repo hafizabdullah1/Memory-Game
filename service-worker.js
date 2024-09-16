@@ -1,13 +1,14 @@
 const CACHE_NAME = 'memory-game-cache-v1';
 const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/images/favicon.ico',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png'
+  '/memory-game/',
+  '/memory-game/index.html',
+  '/memory-game/style.css',
+  '/memory-game/script.js',
+  '/memory-game/images/favicon.ico',
+  '/memory-game/images/icon-192x192.png',
+  '/memory-game/images/icon-512x512.png'
 ];
+
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
